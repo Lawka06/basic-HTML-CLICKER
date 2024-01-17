@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+#score {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#game-container {
+    position: relative;
+}
+#game-img {
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+}
+.d1 {
+    font-size: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clicker Game</title>
+</head>
+<body>
+    <div id="score">Score: <span id="score-count">0</span></div>
+    <div id="game-container">
+        <img src="obrazek1.jpg" alt="Click me!" id="game-img" onclick="increaseScore()">
+    </div>
+
+    <script>
+        var score = parseInt(localStorage.getItem('score')) || 0;
+        var currentImage = 1;
+
+        function increaseScore() {
+            score++;
+            document.getElementById('score-count').innerText = score;
+
+            if (score % 3 === 0) {
+                currentImage = 3;
+            } else if (score % 2 === 0) {
+                currentImage = 2;
+            } else {
+                currentImage = 1;
+            }
+
+            var imagePath = "obrazek" + currentImage + ".jpg";
+            document.getElementById('game-img').src = imagePath;
+
+            localStorage.setItem('score', score.toString());
+        }
+
+        document.getElementById('score-count').innerText = score;
+    </script>
+</body>
+</html>
